@@ -5,5 +5,13 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 <bean id="alien" class="org.example.Alien">
+    <property name="age" value="21"></property>
+    <property name="lap" ref="lap1"></property>
+    <!-- Property is used to set values for any variables
+    "value" is primitive type and "ref" is for objects it is already created -->
 </bean>
+    <!-- <bean id="alien" class="org.example.Alien" scope="prototype"></bean>
+     Scope:- Here singleton is create object default. But, Prototype is create only when we call an object -->
+    <bean id="lap1" class="org.example.Laptop">
+    </bean>
 </beans>
