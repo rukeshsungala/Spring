@@ -1,7 +1,14 @@
 package org.example;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Alien {
     //int age; using private for setters and getters
+    @Value("21") // Injecting the value 21
     private int age;
     private Computer com;
 
@@ -39,7 +46,8 @@ public class Alien {
     public Computer getCom() {
         return com;
     }
-
+    @Autowired
+    @Qualifier("desktop")
     public void setCom(Computer com) {
         this.com = com;
     }

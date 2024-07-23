@@ -7,7 +7,11 @@
 <bean id="alien" class="org.example.Alien" autowire="byType">
 
     <property name="age" value="21" />
+    <property name="com">
+        <bean id="com1" class="org.example.Laptop" primary="true"/><!--This is called Inner Bean-->
+    </property>
     <!--<property name="com" ref="com1" /> -->
+
 
 
     <!-- Constructor  Here we are using sequence only if we have two different values or else we need mention specifically type or index or nameTag
@@ -28,6 +32,6 @@
 </bean>
     <!-- <bean id="alien" class="org.example.Alien" scope="prototype"></bean>
      Scope:- Here singleton is create object default. But, Prototype is create only when we call an object -->
-    <bean id="com" class="org.example.Laptop" primary="true"/>
-    <bean id="com9" class="org.example.Desktop" lazy-init="true"/>
+    <!--<bean id="com" class="org.example.Laptop" primary="true"/>
+     <bean id="com9" class="org.example.Desktop" lazy-init="true"/> -->
 </beans>
